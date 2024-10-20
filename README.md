@@ -2,7 +2,8 @@
 
 > Análise do mainf.tf enviado
 
-###Análise dos Principais Componentes
+Análise dos Principais Componentes
+
 	**Provider AWS**:
 		Define a região em que todos os recursos AWS serão criados, que é us-east-1.
 	
@@ -33,12 +34,11 @@
 		Cria uma instância EC2 com 20 GB de armazenamento, associada à sub-rede e ao grupo de segurança, 
 		e configura um IP público para permitir a comunicação externa. Ao iniciar, a instância atualiza automaticamente o sistema pelo script.
 		
-	###Observação: por boas práticas, eria interessante criar um novo arquivo chamado `variables.tf` para organizar melhor as variáveis e evitar que fiquem no arquivo `main.tf`.
-		
+	###Observação: por boas práticas, eria interessante criar um novo arquivo chamado `variables.tf` para organizar melhor as variáveis e evitar que fiquem no arquivo `main.tf`.		
 		
 > Análise do mainf.tf modificado
 
-	###Security Group:
+	Security Group:
 		**Acesso registrito**: Acesso SSH é limitado a uma rede VPN, reduzindo a superfície de ataque ao não permitir conexões de qualquer lugar.
 		**Ingress**: SSH limitado a VPN, em vez de permitir de qualquer lugar.
 		**Egress**: Limitação de tráfego de saída para portas 80 (HTTP) e 443 (HTTPS), mantendo um padrão de segurança ao liberar apenas o que é necessário para a aplicação se comunicar com a web.
